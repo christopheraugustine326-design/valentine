@@ -1,59 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Valentine</title>
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-      background-color: #ffe6e6;
-      text-align: center;
-    }
-    h1 {
-      font-size: 50px;
-      font-weight: bold;
-      color: #e60073;
-    }
-    button {
-      padding: 15px 40px;
-      margin: 20px;
-      font-size: 20px;
-      font-weight: bold;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    #yesBtn {
-      background-color: #ff6699;
-      color: white;
-    }
-    #noBtn {
-      background-color: #cccccc;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Valentine ❤️</title>
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffe6e6;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  h1 {
+    font-size: 80px; /* VERY BIG */
+    font-weight: bolder; /* SUPER BOLD */
+    color: #e60073;
+    margin-bottom: 50px;
+  }
+
+  button {
+    font-size: 35px; /* BIG BUTTONS */
+    font-weight: bolder; /* VERY BOLD BUTTON TEXT */
+    padding: 25px 50px;
+    margin: 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+
+  #yesBtn {
+    background-color: #ff4d94;
+    color: white;
+  }
+
+  #noBtn {
+    background-color: #999999;
+    color: white;
+    position: absolute;
+  }
+</style>
 </head>
 <body>
-  <h1>Will You Be My Valentine? ❤️</h1>
-  <div>
-    <button id="yesBtn" onclick="yesClick()">Yes</button>
-    <button id="noBtn" onclick="noClick()">No</button>
-  </div>
 
-  <script>
-    function yesClick() {
-      window.location.href = "mailto:YOUR_EMAIL_HERE?subject=Valentine%20Response&body=They%20clicked%20Yes!";
-      alert("You clicked Yes! ❤️");
-    }
+<h1>Will You Be My Valentine? ❤️</h1>
 
-    function noClick() {
-      window.location.href = "mailto:YOUR_EMAIL_HERE?subject=Valentine%20Response&body=They%20clicked%20No!";
-      alert("You clicked No 😢");
-    }
-  </script>
+<div>
+  <button id="yesBtn" onclick="yesClicked()">Yes 💕</button>
+  <button id="noBtn" onmouseover="moveNo()">No 😅</button>
+</div>
+
+<script>
+function yesClicked() {
+  document.body.innerHTML = "<h1>Yay! ❤️ You just made me the happiest person alive 😍</h1>";
+}
+
+function moveNo() {
+  const btn = document.getElementById("noBtn");
+  const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+  const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+  btn.style.left = x + "px";
+  btn.style.top = y + "px";
+}
+</script>
+
 </body>
 </html>
