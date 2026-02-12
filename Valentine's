@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine 💜</title>
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #6a0dad; /* Purple background */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: white;
+  }
+
+  #willYou {
+    font-size: 60px; /* Big, but smaller than Valentine */
+    font-weight: bolder;
+    margin-bottom: 10px;
+  }
+
+  #valentine {
+    font-size: 90px; /* The biggest thing on page */
+    font-weight: bolder;
+    margin-bottom: 50px;
+    color: #ffccff;
+  }
+
+  button {
+    font-size: 35px;
+    font-weight: bolder;
+    padding: 25px 50px;
+    margin: 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+
+  #yesBtn {
+    background-color: #ff66cc;
+    color: white;
+  }
+
+  #noBtn {
+    background-color: #999999;
+    color: white;
+    position: absolute;
+  }
+</style>
+</head>
+<body>
+
+<div id="titles">
+  <div id="willYou">Will You</div>
+  <div id="valentine">My Valentine? 💜</div>
+</div>
+
+<div>
+  <button id="yesBtn" onclick="yesClicked()">Yes 💕</button>
+  <button id="noBtn" onmouseover="moveNo()">No 😅</button>
+</div>
+
+<script>
+function yesClicked() {
+  document.body.innerHTML = "<h1>Yay
